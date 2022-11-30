@@ -1,18 +1,55 @@
 ﻿<Window x:Class="FuturumCampaign.Views.Windows.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FuturumCampaign.Views.Windows"
         xmlns:vm="clr-namespace:FuturumCampaign.ViewModels"
         mc:Ignorable="d"
-        Title="FuturumCampaign" Height="450" Width="800">
+        Title="FuturumCampaign" Height="650" Width="1200"
+        Background="Azure">
 
     <Window.Resources>
-        <vm:MainWindowVM x:Key="MainWindowVM"/>
+        <vm:MainWindowVM x:Key="MainWindowVM" />
     </Window.Resources>
-    
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0">Hejka</TextBlock>
+
+        <UniformGrid Grid.Row="1" Rows="1">
+            <Button></Button>
+            <Button></Button>
+            <Button></Button>
+        </UniformGrid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <ScrollViewer Width="200">
+                <StackPanel>
+                    <Button Height="150"></Button>
+                    <Button Height="150"></Button>
+                    <Button Height="150"></Button>
+                    <Button Height="150"></Button>
+                    <Button Height="150"></Button>
+                    <Button Height="150"></Button>
+                    <Button Height="150"></Button>
+                    <Button Height="150"></Button>
+                    <Button Height="150"></Button>
+                    <Button Height="150"></Button>
+                    <Button Height="150"></Button>
+                    <Button Height="150"></Button>
+                    <Button Height="150"></Button>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
     </Grid>
 </Window>
