@@ -26,4 +26,8 @@
     <Style TargetType="TextBlock" x:Key="HeaderTextBlockStyle" BasedOn="{StaticResource HeaderTextBlockBasic}">
         <Setter Property="Background" Value="{StaticResource HeaderTextBlockColorDefault}" />
     </Style>
+
+    <Style TargetType="Window" x:Key="WindowStyle">
+        <Setter Property="Background" Value="{StaticResource ApplicationColorDefault}"/>
+    </Style>
 </ResourceDictionary>

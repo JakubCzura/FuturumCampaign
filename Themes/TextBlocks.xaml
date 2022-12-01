@@ -8,7 +8,8 @@
     <Style TargetType="TextBlock" x:Key="HeaderTextBlockBasic">
         <Setter Property="TextWrapping" Value="Wrap" />
         <Setter Property="TextAlignment" Value="Center" />
-        <Setter Property="FontSize" Value="26" />
-        <Setter Property="FontFamily" Value="26" />
+        <Setter Property="FontSize" Value="30" />
+        <Setter Property="FontFamily" Value="Georgia" />
+        <Setter Property="Padding" Value="10,10,10,10"/>
     </Style>
 </ResourceDictionary>

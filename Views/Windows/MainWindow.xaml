@@ -6,7 +6,7 @@
         xmlns:vm="clr-namespace:FuturumCampaign.ViewModels"
         mc:Ignorable="d"
         Title="FuturumCampaign" Height="650" Width="1200"
-        Background="Azure">
+        Style="{DynamicResource WindowStyle}">
 
     <Window.Resources>
         <vm:MainWindowVM x:Key="MainWindowVM" />
@@ -19,7 +19,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Style="{DynamicResource HeaderTextBlockStyle}" Text="Hejka"/>
+        <TextBlock Grid.Row="0" Style="{DynamicResource HeaderTextBlockStyle}" Text="Welcome in Futurum Campaign"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
             <Button Style="{DynamicResource NewCampaignButtonStyle}">
@@ -56,6 +56,10 @@
                     <Button Height="150"></Button>
                 </StackPanel>
             </ScrollViewer>
+
+            <ContentControl Grid.Row="1">
+                
+            </ContentControl>
         </Grid>
     </Grid>
 </Window>
