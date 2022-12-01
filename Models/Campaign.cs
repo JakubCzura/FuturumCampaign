@@ -7,7 +7,11 @@ namespace FuturumCampaign.Models
         public string Name { get; set; } = default!;
 
         public List<Keyword> Keywords { get; set; } = default!;
+        
+        public Status Status { get; set; } = default!;
 
-        public List<Town> Towns { get; set; } = default!;
+        public Town Town { get; set; } = default!;
+
+        public Radius Radius { get; set; } = default!;
     }
 }
