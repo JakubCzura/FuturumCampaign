@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace FuturumCampaign.Models
 {
-    public class Product
+    public class BidAmount
     {
-        public string Name { get; set; } = default!;
+        public decimal Amount { get; set; }
 
-        public string Description { get; set; } = default!;
+        public decimal MinAmount { get; set; }
     }
 }
