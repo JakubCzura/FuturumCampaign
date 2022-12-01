@@ -1,8 +1,29 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Style TargetType="Button" x:Key="MainMenuButtonStyle">
-        <Setter Property="Height" Value="50"/>
-        <Setter Property="Width" Value="50"/>
+    <!--File to contain all styles for default theme
+    Important! When you bind a style to a control, you must always use style whose name ends with 'Style' like 'HeaderTextBoxStyle'
+    Other names might be basic version of a style and don't contain all necessary properties-->
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Buttons.xaml" />
+        <ResourceDictionary Source="TextBlocks.xaml" />
+        <ResourceDictionary Source="Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="Button" x:Key="NewCampaignButtonStyle" BasedOn="{StaticResource MainMenuButtonBasic}">
+        <Setter Property="Background" Value="{StaticResource NewCampaignButtonColorDefault}" />
+    </Style>
+
+    <Style TargetType="Button" x:Key="EditCampaignButtonStyle" BasedOn="{StaticResource MainMenuButtonBasic}">
+        <Setter Property="Background" Value="{StaticResource EditCampaignButtonColorDefault}" />
+    </Style>
+
+    <Style TargetType="Button" x:Key="DeleteCampaignButtonStyle" BasedOn="{StaticResource MainMenuButtonBasic}">
+        <Setter Property="Background" Value="{StaticResource DeleteCampaignButtonColorDefault}" />
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="HeaderTextBlockStyle" BasedOn="{StaticResource HeaderTextBlockBasic}">
+        <Setter Property="Background" Value="{StaticResource HeaderTextBlockColorDefault}" />
     </Style>
 </ResourceDictionary>

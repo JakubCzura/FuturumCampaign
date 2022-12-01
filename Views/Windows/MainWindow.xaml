@@ -19,18 +19,24 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0">Hejka</TextBlock>
+        <TextBlock Grid.Row="0" Style="{DynamicResource HeaderTextBlockStyle}" Text="Hejka"/>
 
-        <UniformGrid Grid.Row="1" Rows="1">
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-        </UniformGrid>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+            <Button Style="{DynamicResource NewCampaignButtonStyle}">
+                <TextBlock Text="Create new campaign" />
+            </Button>
+            <Button Style="{DynamicResource EditCampaignButtonStyle}">
+                <TextBlock Text="Edit campaign" />
+            </Button>
+            <Button Style="{DynamicResource DeleteCampaignButtonStyle}">
+                <TextBlock Text="Delete campaign" />
+            </Button>
+        </StackPanel>
 
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <ScrollViewer Width="200">
