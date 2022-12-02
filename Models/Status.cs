@@ -8,7 +8,7 @@ namespace FuturumCampaign.Models
 {
     public class Status
     {
-        enum Values
+        public enum Values
         {
             On,
             Off

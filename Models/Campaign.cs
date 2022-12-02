@@ -7,22 +7,27 @@ namespace FuturumCampaign.Models
         public Campaign()
         {
             Keywords = new();
-            BidAmount = new();
-            Status = new();
-            Town = new();
-            Radius = new();
         }
 
-        public string Name { get; set; } = default!;
-        public List<Keyword> Keywords { get; set; } = default!;
-        public BidAmount BidAmount { get; set; } = default!;
+        public Campaign(decimal bidAmount, decimal minAmount, decimal fund, List<string> keywords, string name, double radius, string status, string town)
+        {
+            BidAmount = bidAmount;
+            MinAmount = minAmount;
+            Fund = fund;
+            Keywords = keywords;
+            Name = name;
+            Radius = radius;
+            Status = status;
+            Town = town;
+        }
 
+        public decimal BidAmount { get; set; } = default!;
         public decimal Fund { get; set; } = default!;
-
-        public Status Status { get; set; } = default!;
-
-        public Town Town { get; set; } = default!;
-
-        public Radius Radius { get; set; } = default!;
+        public List<string> Keywords { get; set; } = default!;
+        public decimal MinAmount { get; set; } = default!;
+        public string Name { get; set; } = default!;
+        public double Radius { get; set; } = default!;
+        public string Status { get; set; } = default!;
+        public string Town { get; set; } = default!;
     }
 }
