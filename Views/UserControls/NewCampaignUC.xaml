@@ -19,7 +19,8 @@
                     VerticalAlignment="Stretch">
             <Grid Style="{DynamicResource MainMenuGridStyle}">
                 <StackPanel Style="{DynamicResource MainMenuStackPanelStyle}">
-                    <Button Style="{DynamicResource NewCampaignButtonStyle}">
+                    <Button Style="{DynamicResource NewCampaignButtonStyle}"
+                            Command="{Binding SaveNewCampaignCommand}">
                         <TextBlock Text="Save new campaign" />
                     </Button>
                     <Button Style="{DynamicResource DeleteCampaignButtonStyle}">
@@ -44,12 +45,11 @@
 
                     <StackPanel>
                         <TextBlock HorizontalAlignment="Center">Keywords</TextBlock>
-                        <UniformGrid Rows="1" Columns="3">
+                        <UniformGrid Rows="1">
                             <TextBlock>Keyword:</TextBlock>
                             <controls:AutoCompleteBox FilterMode="Contains" ItemsSource="{Binding AllKeywords}" Text="{Binding Keyword}" />
-                            <Button>Add</Button>
+                            <Button Command="{Binding AddKeywordCommand}">Add</Button>
                         </UniformGrid>
-                        <TextBlock Text="{Binding Keywords}"/>
                     </StackPanel>
                     <StackPanel>
                         <TextBlock HorizontalAlignment="Center">Bid amount</TextBlock>

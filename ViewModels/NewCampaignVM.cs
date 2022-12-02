@@ -1,7 +1,9 @@
-﻿using FuturumCampaign.Models;
+﻿using FuturumCampaign.Commands;
+using FuturumCampaign.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Input;
 
 namespace FuturumCampaign.ViewModels
 {
@@ -16,22 +18,27 @@ namespace FuturumCampaign.ViewModels
         private decimal fund;
 
         private string keyword;
-        private List<string> keywords;
+        private List<string> keywords = new();
         private decimal minAmount;
         private string name;
 
         private string status;
-        private List<string> statusList;
-        private List<string> townsList;
+        private List<string> statusList = new();
+        private List<string> townsList = new();
         private string town;
         private double radius;
-        private List<string> allKeywords;
+        private List<string> allKeywords = new();
+
+        public ICommand AddKeywordCommand { get; set; }
+        public ICommand SaveNewCampaignCommand { get; set; }
 
         public NewCampaignVM()
         {
             Campaign = new Campaign();
             AllKeywords = KeywordsCreator.CreateKeywords();
             TownsList = TownsCreator.CreateTowns();
+            AddKeywordCommand = new AddKeywordCommand(this);
+            SaveNewCampaignCommand = new SaveNewCampaignCommand(this);
         }
 
         public decimal Amount
