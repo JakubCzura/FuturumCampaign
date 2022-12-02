@@ -7,10 +7,12 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Buttons.xaml" />
-        <ResourceDictionary Source="TextBlocks.xaml" />
         <ResourceDictionary Source="Colors.xaml" />
+        <ResourceDictionary Source="StackPanels.xaml" />
+        <ResourceDictionary Source="TextBlocks.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <!--#region Buttons -->
     <Style TargetType="Button" x:Key="NewCampaignButtonStyle" BasedOn="{StaticResource MainMenuButtonBasic}">
         <Setter Property="Background" Value="{StaticResource NewCampaignButtonColorDefault}" />
     </Style>
@@ -22,12 +24,28 @@
     <Style TargetType="Button" x:Key="DeleteCampaignButtonStyle" BasedOn="{StaticResource MainMenuButtonBasic}">
         <Setter Property="Background" Value="{StaticResource DeleteCampaignButtonColorDefault}" />
     </Style>
+    <!--#endregion-->
 
+    <!--#region TextBlocks -->
     <Style TargetType="TextBlock" x:Key="HeaderTextBlockStyle" BasedOn="{StaticResource HeaderTextBlockBasic}">
-        <Setter Property="Background" Value="{StaticResource HeaderTextBlockColorDefault}" />
+        <Setter Property="Background" Value="{StaticResource LinearBlueBackgroundDefault}" />
     </Style>
+    <!--#endregion-->
 
+    <!--#region Windows -->
     <Style TargetType="Window" x:Key="WindowStyle">
-        <Setter Property="Background" Value="{StaticResource ApplicationColorDefault}"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="10" />
+            </Style>
+        </Style.Resources>
+        <Setter Property="Background" Value="{StaticResource ApplicationColorDefault}" />
     </Style>
+    <!--#endregion-->
+
+    <!--#region StackPanels -->
+    <Style TargetType="StackPanel" x:Key="MainMenuStackPanelStyle" BasedOn="{StaticResource MainMenuStackPanelBasic}">
+        <Setter Property="Background" Value="{StaticResource LinearBlueBackgroundDefault}" />
+    </Style>
+    <!--#endregion-->
 </ResourceDictionary>

@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:FuturumCampaign.ViewModels"
         mc:Ignorable="d"
-        Title="FuturumCampaign" Height="650" Width="1200"
+        Title="FuturumCampaign" 
+        Height="650" Width="1200"
+        MinWidth="800"
         Style="{DynamicResource WindowStyle}">
 
     <Window.Resources>
@@ -21,7 +23,7 @@
 
         <TextBlock Grid.Row="0" Style="{DynamicResource HeaderTextBlockStyle}" Text="Welcome in Futurum Campaign"/>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Stretch" Style="{DynamicResource MainMenuStackPanelStyle}"  Grid.Row="1" >
             <Button Style="{DynamicResource NewCampaignButtonStyle}">
                 <TextBlock Text="Create new campaign" />
             </Button>
