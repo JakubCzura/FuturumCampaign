@@ -21,11 +21,9 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Style="{DynamicResource HeaderTextBlockStyle}" Text="Welcome in Futurum Campaign">
- 
-        </TextBlock>
+        <TextBlock Grid.Row="0" Style="{DynamicResource HeaderTextBlockStyle}" Text="Welcome in Futurum Campaign"/>
 
-        <StackPanel Style="{DynamicResource MainMenuStackPanelStyle}"  Grid.Row="1" >
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Stretch" Style="{DynamicResource MainMenuStackPanelStyle}"  Grid.Row="1" >
             <Button Style="{DynamicResource NewCampaignButtonStyle}">
                 <TextBlock Text="Create new campaign" />
             </Button>
