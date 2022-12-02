@@ -4,6 +4,15 @@ namespace FuturumCampaign.Models
 {
     public class Campaign
     {
+        public Campaign()
+        {
+            Keywords = new();
+            BidAmount = new();
+            Status = new();
+            Town = new();
+            Radius = new();
+        }
+
         public string Name { get; set; } = default!;
         public List<Keyword> Keywords { get; set; } = default!;
         public BidAmount BidAmount { get; set; } = default!;

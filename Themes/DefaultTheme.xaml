@@ -48,4 +48,10 @@
         <Setter Property="Background" Value="{StaticResource LinearBlueBackgroundDefault}" />
     </Style>
     <!--#endregion-->
+
+    <!--#region Grids -->
+    <Style TargetType="Grid" x:Key="MainMenuGridStyle">
+        <Setter Property="Background" Value="{StaticResource LinearBlueBackgroundDefault}" />
+    </Style>
+    <!--#endregion-->
 </ResourceDictionary>

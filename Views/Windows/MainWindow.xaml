@@ -4,14 +4,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:FuturumCampaign.ViewModels"
+        xmlns:uc="clr-namespace:FuturumCampaign.Views.UserControls"
         mc:Ignorable="d"
-        Title="FuturumCampaign" 
+        Title="FuturumCampaign"
         Height="650" Width="1200"
         MinWidth="800"
         Style="{DynamicResource WindowStyle}">
 
     <Window.Resources>
         <vm:MainWindowVM x:Key="MainWindowVM" />
+        <uc:NewCampaignUC x:Key="NewCampaignUC" />
     </Window.Resources>
 
     <Grid>
@@ -21,19 +23,21 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Style="{DynamicResource HeaderTextBlockStyle}" Text="Welcome in Futurum Campaign"/>
+        <TextBlock Grid.Row="0" Style="{DynamicResource HeaderTextBlockStyle}" Text="Welcome in Futurum Campaign" />
 
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Stretch" Style="{DynamicResource MainMenuStackPanelStyle}"  Grid.Row="1" >
-            <Button Style="{DynamicResource NewCampaignButtonStyle}">
-                <TextBlock Text="Create new campaign" />
-            </Button>
-            <Button Style="{DynamicResource EditCampaignButtonStyle}">
-                <TextBlock Text="Edit campaign" />
-            </Button>
-            <Button Style="{DynamicResource DeleteCampaignButtonStyle}">
-                <TextBlock Text="Delete campaign" />
-            </Button>
-        </StackPanel>
+        <Grid Grid.Row="1" Style="{DynamicResource MainMenuGridStyle}">
+            <StackPanel Style="{DynamicResource MainMenuStackPanelStyle}">
+                <Button Style="{DynamicResource NewCampaignButtonStyle}">
+                    <TextBlock Text="Create new campaign" />
+                </Button>
+                <Button Style="{DynamicResource EditCampaignButtonStyle}">
+                    <TextBlock Text="Edit campaign" />
+                </Button>
+                <Button Style="{DynamicResource DeleteCampaignButtonStyle}">
+                    <TextBlock Text="Delete campaign" />
+                </Button>
+            </StackPanel>
+        </Grid>
 
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -41,7 +45,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <ScrollViewer Width="200">
+            <ScrollViewer Grid.Column="0" Width="200">
                 <StackPanel>
                     <Button Height="150"></Button>
                     <Button Height="150"></Button>
@@ -59,8 +63,8 @@
                 </StackPanel>
             </ScrollViewer>
 
-            <ContentControl Grid.Row="1">
-                
+            <ContentControl Grid.Column="1">
+                <uc:NewCampaignUC></uc:NewCampaignUC>
             </ContentControl>
         </Grid>
     </Grid>
