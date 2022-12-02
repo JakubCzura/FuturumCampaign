@@ -35,7 +35,7 @@ namespace FuturumCampaign.Commands
             try
             {
                 //return true;
-                return canExecute((T)parameter);
+                return canExecute.Invoke((T)parameter);
             }
             catch (Exception exception)
             {

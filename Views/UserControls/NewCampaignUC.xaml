@@ -26,7 +26,7 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 
-                <StackPanel Grid.Column="0">
+                <StackPanel Margin="5,5,5,5" Grid.Column="0">
                     <StackPanel>
                         <TextBlock HorizontalAlignment="Center">Campaign</TextBlock>
                         <UniformGrid Rows="1">
@@ -65,7 +65,7 @@
                     </StackPanel>
                 </StackPanel>
                 
-                <StackPanel Grid.Column="1">
+                <StackPanel Margin="5,5,5,5" Grid.Column="1">
                     <StackPanel>
                         <TextBlock HorizontalAlignment="Center">Status</TextBlock>
                         <UniformGrid Rows="1">
@@ -81,10 +81,13 @@
                             <controls:AutoCompleteBox/>
                         </UniformGrid>
                     </StackPanel>
-                    <UniformGrid Rows="1">
-                        <TextBlock>Radius:</TextBlock>
-                        <TextBox></TextBox>
-                    </UniformGrid>
+                    <StackPanel>
+                        <TextBlock HorizontalAlignment="Center">Radius</TextBlock>
+                        <UniformGrid Rows="1">
+                            <TextBlock>Radius in kilometers:</TextBlock>
+                            <controls:AutoCompleteBox/>
+                        </UniformGrid>
+                    </StackPanel>
                 </StackPanel>
             </Grid>
         </StackPanel>
