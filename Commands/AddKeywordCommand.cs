@@ -1,4 +1,5 @@
 ﻿using FuturumCampaign.ViewModels;
+using System;
 using System.Windows.Input;
 
 namespace FuturumCampaign.Commands
@@ -19,10 +20,10 @@ namespace FuturumCampaign.Commands
 
         public void Execute(object? parameter)
         {
-            //if(NewCampaignVM.Keywords != null && String.IsNullOrWhiteSpace(NewCampaignVM.Keyword) == false)
-            //{
-            NewCampaignVM.Keywords.Add(NewCampaignVM.Keyword);
-            // }
+            if (NewCampaignVM.Keywords != null && String.IsNullOrWhiteSpace(NewCampaignVM.Keyword) == false)
+            {
+                NewCampaignVM.Keywords.Add(NewCampaignVM.Keyword);
+            }
         }
     }
 }

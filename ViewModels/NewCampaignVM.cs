@@ -44,6 +44,8 @@ namespace FuturumCampaign.ViewModels
         }
 
         public ICommand AddKeywordCommand { get; set; }
+
+        public ICommand SaveNewCampaignCommand { get; set; }
         public List<string> AllKeywords
         {
             get { return allKeywords; }
@@ -98,7 +100,7 @@ namespace FuturumCampaign.ViewModels
             set { radius = value; OnPropertyChanged(); }
         }
 
-        public ICommand SaveNewCampaignCommand { get; set; }
+      
         public string Status
         {
             get { return status; }

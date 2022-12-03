@@ -14,6 +14,7 @@
     <Grid DataContext="{StaticResource CampaignsVM}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" 
@@ -23,7 +24,7 @@
         <DataGrid Grid.Row="1" 
                   ItemsSource="{Binding Campaigns}" 
                   AutoGenerateColumns="False" 
-                  IsReadOnly="True" 
+                  IsReadOnly="False" 
                   SelectedItem="{Binding SelectedCampaign}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
@@ -41,5 +42,6 @@
                 </ContextMenu>
             </DataGrid.ContextMenu>
         </DataGrid>
+        <Button Grid.Row="2" Height="50" Command="{Binding SaveEditedCampaignsCommand}"></Button>
     </Grid>
 </UserControl>

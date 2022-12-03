@@ -4,6 +4,7 @@ using FuturumCampaign.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Input;
 
@@ -28,10 +29,16 @@ namespace FuturumCampaign.Commands
         }
 
         public void Execute(object? parameter)
-        {
-            CampaignsVM.Campaigns.Remove(CampaignsVM.SelectedCampaign);
-            List<Campaign> Campaigns = CampaignsVM.Campaigns.ToList();
-            CampaignsData.SaveCampaigns(Campaigns);
+        {          
+            try
+            {
+                CampaignsVM.Campaigns.Remove(CampaignsVM.SelectedCampaign);
+                CampaignsData.SaveCampaigns(CampaignsVM.Campaigns.ToList());
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error while deleting campaign");
+            }
         }
     }
 }

@@ -45,7 +45,7 @@
 
     <!--#region StackPanels -->
     <Style TargetType="StackPanel" x:Key="MainMenuStackPanelStyle" BasedOn="{StaticResource MainMenuStackPanelBasic}">
-        <Setter Property="Background" Value="{StaticResource LinearBlueBackgroundDefault}" />
+        <!--<Setter Property="Background" Value="{StaticResource LinearBlueBackgroundDefault}" />-->
     </Style>
     <!--#endregion-->
 

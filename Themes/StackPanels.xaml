@@ -4,5 +4,6 @@
     <Style TargetType="StackPanel" x:Key="MainMenuStackPanelBasic">
         <Setter Property="Orientation" Value="Horizontal" />
         <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0,0,0,20"/>
     </Style>
 </ResourceDictionary>
