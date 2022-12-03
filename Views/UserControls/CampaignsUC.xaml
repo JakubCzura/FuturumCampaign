@@ -9,6 +9,13 @@
 
     <UserControl.Resources>
         <vm:CampaignsVM x:Key="CampaignsVM" />
+
+        <Style TargetType="DataGridCell">
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
     </UserControl.Resources>
 
     <Grid DataContext="{StaticResource CampaignsVM}">

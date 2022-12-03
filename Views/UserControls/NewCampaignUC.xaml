@@ -6,116 +6,140 @@
              xmlns:vm="clr-namespace:FuturumCampaign.ViewModels"
              xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="800"
-             Background="AliceBlue">
+             d:DesignHeight="450" d:DesignWidth="800">
 
     <UserControl.Resources>
         <vm:NewCampaignVM x:Key="NewCampaignVM" />
+
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="15" />
+        </Style>
+        <Style TargetType="controls:AutoCompleteBox">
+            <Setter Property="FontSize" Value="15" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="15" />
+        </Style>
     </UserControl.Resources>
 
     <Grid DataContext="{StaticResource NewCampaignVM}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
-        <StackPanel HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch">
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-
-                <StackPanel Margin="5,5,5,5" Grid.Column="0">
-                    <StackPanel>
-                        <TextBlock HorizontalAlignment="Center">Campaign</TextBlock>
-                        <UniformGrid Rows="1">
-                            <TextBlock>Campaign name:</TextBlock>
-                            <TextBox Text="{Binding Name}" />
-                        </UniformGrid>
-                    </StackPanel>
-
-                    <StackPanel>
-                        <TextBlock HorizontalAlignment="Center">Keywords</TextBlock>
-                        <UniformGrid Rows="1">
-                            <TextBlock>Keyword:</TextBlock>
-                            <controls:AutoCompleteBox FilterMode="Contains" ItemsSource="{Binding AllKeywords}" Text="{Binding Keyword, Mode=TwoWay}" />
-                            <Button Command="{Binding AddKeywordCommand}">Add</Button>
-                        </UniformGrid>
-                        <UniformGrid Rows="1">
-                            <TextBlock>Keywords:</TextBlock>
-                            <ListView ItemsSource="{Binding Keywords}">
-                                <ListView.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <StackPanel Orientation="Horizontal"></StackPanel>
-                                    </ItemsPanelTemplate>
-                                </ListView.ItemsPanel>
-                            </ListView>
-                        </UniformGrid>
-                    </StackPanel>
-                    <StackPanel>
-                        <TextBlock HorizontalAlignment="Center">Bid amount</TextBlock>
-                        <UniformGrid Rows="2" Columns="2">
-                            <TextBlock>Amount:</TextBlock>
-                            <TextBox Text="{Binding BidAmount, Mode=TwoWay}" />
-                            <TextBlock>Min amount:</TextBlock>
-                            <TextBox Text="{Binding MinAmount, Mode=TwoWay}"></TextBox>
-                        </UniformGrid>
-                    </StackPanel>
-                    <StackPanel>
-                        <TextBlock HorizontalAlignment="Center">Campaign fund:</TextBlock>
-                        <UniformGrid Rows="1">
-                            <TextBlock>Fund:</TextBlock>
-                            <TextBox Text="{Binding Fund}" />
-                        </UniformGrid>
-                    </StackPanel>
+            <StackPanel Grid.Column="0"
+                        Margin="5,5,5,5">
+                <StackPanel>
+                    <TextBlock HorizontalAlignment="Center"
+                               Text="Campaign" />
+                    <UniformGrid Rows="1">
+                        <TextBlock Text="Campaign's name:" />
+                        <TextBox Text="{Binding Name}" />
+                    </UniformGrid>
                 </StackPanel>
 
-                <StackPanel Margin="5,5,5,5" Grid.Column="1">
-                    <StackPanel>
-                        <TextBlock HorizontalAlignment="Center">Status</TextBlock>
-                        <UniformGrid Rows="1">
-                            <TextBlock>On/Off:</TextBlock>
-                            <ComboBox ItemsSource="{Binding StatusList}" SelectedItem="{Binding Status}" />
-                        </UniformGrid>
-                    </StackPanel>
-
-                    <StackPanel>
-                        <TextBlock HorizontalAlignment="Center">Town</TextBlock>
-                        <UniformGrid Rows="1">
-                            <TextBlock>Town:</TextBlock>
-                            <controls:AutoCompleteBox ItemsSource="{Binding TownsList}" Text="{Binding Town, Mode=TwoWay}" />
-                        </UniformGrid>
-                    </StackPanel>
-                    <StackPanel>
-                        <TextBlock HorizontalAlignment="Center">Radius</TextBlock>
-                        <UniformGrid Rows="1">
-                            <TextBlock>Radius in kilometers:</TextBlock>
-                            <TextBox Text="{Binding Radius}" />
-                        </UniformGrid>
-                    </StackPanel>
-                    <StackPanel>
-                        <TextBlock HorizontalAlignment="Center">Product</TextBlock>
-                        <UniformGrid Rows="1">
-                            <TextBlock>ProductName:</TextBlock>
-                            <TextBox Text="{Binding ProductName}" />
-                        </UniformGrid>
-                    </StackPanel>
-                    <StackPanel>
-                        <TextBlock HorizontalAlignment="Center">Product</TextBlock>
-                        <UniformGrid Rows="1">
-                            <TextBlock>Product description:</TextBlock>
-                            <TextBox Text="{Binding Description}" />
-                        </UniformGrid>
-                    </StackPanel>
+                <StackPanel>
+                    <TextBlock HorizontalAlignment="Center"
+                               Text="Keywords"/>
+                    <UniformGrid Rows="1">
+                        <TextBlock Text="Keyword:"/>
+                        <controls:AutoCompleteBox FilterMode="Contains" 
+                                                  ItemsSource="{Binding AllKeywords}" 
+                                                  Text="{Binding Keyword}" />
+                        <Button Command="{Binding AddKeywordCommand}" 
+                                Content="Add"/>
+                    </UniformGrid>
+                    <UniformGrid Rows="1">
+                        <TextBlock Text="Keywords:"/>
+                        <ListView ItemsSource="{Binding Keywords}">
+                            <ListView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+                        </ListView>
+                    </UniformGrid>
                 </StackPanel>
-            </Grid>
-            <Grid Style="{DynamicResource MainMenuGridStyle}">
-                <StackPanel Style="{DynamicResource MainMenuStackPanelStyle}">
-                    <Button Style="{DynamicResource NewCampaignButtonStyle}"
+                <StackPanel>
+                    <TextBlock HorizontalAlignment="Center" Text="Bid amount"/> 
+                    <UniformGrid Rows="2" Columns="2">
+                        <TextBlock Text="Amount:"/> 
+                        <TextBox Text="{Binding BidAmount}" />
+                        <TextBlock Text="Min amount:"/>
+                        <TextBox Text="{Binding MinAmount}"></TextBox>
+                    </UniformGrid>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock HorizontalAlignment="Center"
+                               Text="Campaign fund:"/>
+                    <UniformGrid Rows="1">
+                        <TextBlock Text="Fund:"/>
+                        <TextBox Text="{Binding Fund}" />
+                    </UniformGrid>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" 
+                        Margin="5,5,5,5">
+                <StackPanel>
+                    <TextBlock HorizontalAlignment="Center"
+                               Text="Status"/>
+                    <UniformGrid Rows="1">
+                        <TextBlock Text="On/Off"/>
+                        <ComboBox ItemsSource="{Binding StatusList}" 
+                                  SelectedItem="{Binding Status}" />
+                    </UniformGrid>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock HorizontalAlignment="Center" Text="Town"/>
+                    <UniformGrid Rows="1">
+                        <TextBlock Text="Town:"/>
+                        <controls:AutoCompleteBox FilterMode="Contains"
+                                                  ItemsSource="{Binding TownsList}" 
+                                                  Text="{Binding Town}" />
+                    </UniformGrid>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock HorizontalAlignment="Center"
+                               Text="Radius"/> 
+                    <UniformGrid Rows="1">
+                        <TextBlock Text="Radius in kilometers"/>
+                        <TextBox Text="{Binding Radius}" />
+                    </UniformGrid>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock HorizontalAlignment="Center"
+                               Text="Product"/>
+                    <UniformGrid Rows="1">
+                        <TextBlock Text="Product's name"/>
+                        <TextBox Text="{Binding ProductName}" />
+                    </UniformGrid>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock HorizontalAlignment="Center"
+                               Text="Product"/>
+                    <UniformGrid Rows="1">
+                        <TextBlock Text="Product's description"/>
+                        <TextBox Text="{Binding Description}" />
+                    </UniformGrid>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" Style="{DynamicResource MainMenuGridStyle}">
+            <StackPanel Style="{DynamicResource MainMenuStackPanelStyle}">
+                <Button Style="{DynamicResource NewCampaignButtonStyle}"
                             Command="{Binding SaveNewCampaignCommand}">
-                        <TextBlock Text="Save new campaign" />
-                    </Button>
-                </StackPanel>
-            </Grid>
-        </StackPanel>
+                    <TextBlock Text="Save new campaign" />
+                </Button>
+            </StackPanel>
+        </Grid>
     </Grid>
 </UserControl>

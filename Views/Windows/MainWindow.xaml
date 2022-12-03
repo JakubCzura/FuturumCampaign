@@ -31,9 +31,12 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Style="{DynamicResource HeaderTextBlockStyle}" Text="Welcome in Futurum Campaign" />
+        <TextBlock Grid.Row="0" 
+                   Style="{DynamicResource HeaderTextBlockStyle}" 
+                   Text="Welcome in Futurum Campaign" />
 
-        <Grid Grid.Row="1" Style="{DynamicResource MainMenuGridStyle}">
+        <Grid Grid.Row="1" 
+              Style="{DynamicResource MainMenuGridStyle}">
             <StackPanel Style="{DynamicResource MainMenuStackPanelStyle}">
                 <Button Style="{DynamicResource NewCampaignButtonStyle}"
                         Command="{Binding SetMainWindowContentCommand}"
