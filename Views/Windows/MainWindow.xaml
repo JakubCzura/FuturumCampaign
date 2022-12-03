@@ -15,9 +15,17 @@
         <vm:MainWindowVM x:Key="MainWindowVM" />
         <uc:NewCampaignUC x:Key="NewCampaignUC" />
         <uc:CampaignsUC x:Key="CampaignsUC" />
+
+        <DataTemplate DataType="{x:Type vm:NewCampaignVM}">
+            <uc:NewCampaignUC/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:CampaignsVM}">
+            <uc:CampaignsUC/>
+        </DataTemplate>
+        
     </Window.Resources>
 
-    <Grid>
+    <Grid DataContext="{StaticResource MainWindowVM}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -28,42 +36,23 @@
 
         <Grid Grid.Row="1" Style="{DynamicResource MainMenuGridStyle}">
             <StackPanel Style="{DynamicResource MainMenuStackPanelStyle}">
-                <Button Style="{DynamicResource NewCampaignButtonStyle}">
+                <Button Style="{DynamicResource NewCampaignButtonStyle}"
+                        Command="{Binding SetMainWindowContentCommand}"
+                        CommandParameter="NewCampaign">
                     <TextBlock Text="Create new campaign" />
                 </Button>
-                <Button Style="{DynamicResource EditCampaignButtonStyle}">
+                <Button Style="{DynamicResource EditCampaignButtonStyle}"
+                        Command="{Binding SetMainWindowContentCommand}"
+                        CommandParameter="Campaigns">
                     <TextBlock Text="Your campaigns" />
                 </Button>
             </StackPanel>
         </Grid>
 
         <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
-            <ScrollViewer Grid.Column="0" Width="200">
-                <StackPanel>
-                    <Button Height="150"></Button>
-                    <Button Height="150"></Button>
-                    <Button Height="150"></Button>
-                    <Button Height="150"></Button>
-                    <Button Height="150"></Button>
-                    <Button Height="150"></Button>
-                    <Button Height="150"></Button>
-                    <Button Height="150"></Button>
-                    <Button Height="150"></Button>
-                    <Button Height="150"></Button>
-                    <Button Height="150"></Button>
-                    <Button Height="150"></Button>
-                    <Button Height="150"></Button>
-                </StackPanel>
-            </ScrollViewer>
-
-            <ContentControl Grid.Column="1">
+            <ContentControl Content="{Binding MainWindowContent}">
                 <!--<uc:NewCampaignUC></uc:NewCampaignUC>-->
-                <uc:CampaignsUC></uc:CampaignsUC>
+                <!--<uc:CampaignsUC></uc:CampaignsUC>-->
             </ContentControl>
         </Grid>
     </Grid>
