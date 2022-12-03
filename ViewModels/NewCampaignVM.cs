@@ -16,25 +16,21 @@ namespace FuturumCampaign.ViewModels
     {
         private List<string> allKeywords = new();
         private decimal bidAmount;
-
-
         private List<Campaign> campaigns = new();
         private decimal fund;
-
         private string keyword;
         private List<string> keywords = new();
         private decimal minAmount;
         private string name;
-
         private double radius;
         private string status;
         private List<string> statusList = new();
         private string town;
         private List<string> townsList = new();
+
         public NewCampaignVM()
         {
             Campaigns = CampaignsData.ReadCampaigns();
-
             AllKeywords = KeywordsCreator.CreateKeywords();
             TownsList = TownsCreator.CreateTowns();
             StatusList = GetStatusList();
@@ -45,7 +41,6 @@ namespace FuturumCampaign.ViewModels
 
         public ICommand AddKeywordCommand { get; set; }
 
-        public ICommand SaveNewCampaignCommand { get; set; }
         public List<string> AllKeywords
         {
             get { return allKeywords; }
@@ -100,7 +95,8 @@ namespace FuturumCampaign.ViewModels
             set { radius = value; OnPropertyChanged(); }
         }
 
-      
+        public ICommand SaveNewCampaignCommand { get; set; }
+
         public string Status
         {
             get { return status; }

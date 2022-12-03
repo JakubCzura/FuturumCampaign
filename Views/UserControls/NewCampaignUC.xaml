@@ -73,8 +73,6 @@
                         <UniformGrid Rows="1">
                             <TextBlock>Town:</TextBlock>
                             <controls:AutoCompleteBox ItemsSource="{Binding TownsList}" Text="{Binding Town, Mode=TwoWay}" />
-                            <!--<ComboBox ItemsSource="{Binding TownsList}" SelectedItem="{Binding Town, Mode=TwoWay}" />-->
-                            <!--<TextBox Text="{Binding Town}" />-->
                         </UniformGrid>
                     </StackPanel>
                     <StackPanel>

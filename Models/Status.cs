@@ -2,6 +2,9 @@
 {
     public class Status
     {
+        /// <summary>
+        /// Values for campaign's status
+        /// </summary>
         public enum Values
         {
             On,

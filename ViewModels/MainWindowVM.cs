@@ -11,13 +11,6 @@ namespace FuturumCampaign.ViewModels
     public class MainWindowVM : BaseViewModel
     {
         private BaseViewModel mainWindowContent;
-        public BaseViewModel MainWindowContent
-        {
-            get { return mainWindowContent; }
-            set { mainWindowContent = value; OnPropertyChanged(); }
-        }
-
-        public ICommand SetMainWindowContentCommand { get; set; }
 
         public MainWindowVM()
         {
@@ -28,10 +21,18 @@ namespace FuturumCampaign.ViewModels
             MainWindowContent = new NewCampaignVM();
         }
 
-        public Campaign Campaign { get; set; }
-
         public List<string> AllKeywordsList { get; set; }
 
         public List<string> AllTownsList { get; set; }
+
+        public Campaign Campaign { get; set; }
+
+        public BaseViewModel MainWindowContent
+        {
+            get { return mainWindowContent; }
+            set { mainWindowContent = value; OnPropertyChanged(); }
+        }
+
+        public ICommand SetMainWindowContentCommand { get; set; }
     }
 }

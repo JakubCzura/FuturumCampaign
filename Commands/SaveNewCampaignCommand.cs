@@ -7,6 +7,9 @@ using System.Windows.Input;
 
 namespace FuturumCampaign.Commands
 {
+    /// <summary>
+    /// Saves new campaign
+    /// </summary>
     public class SaveNewCampaignCommand : BaseCommand, ICommand
     {
         public SaveNewCampaignCommand(NewCampaignVM newCampaignVM)

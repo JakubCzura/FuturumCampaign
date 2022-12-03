@@ -4,6 +4,9 @@ using System.Windows.Input;
 
 namespace FuturumCampaign.Commands
 {
+    /// <summary>
+    /// Adds keyword to campaign's keywords list
+    /// </summary>
     public class AddKeywordCommand : BaseCommand, ICommand
     {
         public AddKeywordCommand(NewCampaignVM newCampaignVM)

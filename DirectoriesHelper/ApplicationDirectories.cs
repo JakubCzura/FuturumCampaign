@@ -14,6 +14,10 @@ namespace FuturumCampaign.DirectoriesHelper
             return Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
         }
 
+        /// <summary>
+        /// Gets full path for Data directory
+        /// </summary>
+        /// <returns>Full path for Data directory</returns>
         public static string GetDataDirectoryFullName()
         {
             return Path.Combine(GetBaseDirectory(), Names.DataDirectoryName);
@@ -29,6 +33,9 @@ namespace FuturumCampaign.DirectoriesHelper
             Directory.CreateDirectory(Path.Combine(path, name));
         }
 
+        /// <summary>
+        /// Creates Data directory
+        /// </summary>
         public static void CreateDataDirectory()
         {
             CreateNewDirectory(GetBaseDirectory(), Names.DataDirectoryName);

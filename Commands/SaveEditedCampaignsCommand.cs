@@ -13,6 +13,9 @@ using System.Windows.Input;
 
 namespace FuturumCampaign.Commands
 {
+    /// <summary>
+    /// Saves edited campaigns
+    /// </summary>
     public class SaveEditedCampaignsCommand : BaseCommand, ICommand
     {
         public CampaignsVM CampaignsVM { get; set; }

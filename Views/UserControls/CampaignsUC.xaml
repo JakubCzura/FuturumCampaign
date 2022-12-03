@@ -8,40 +8,46 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <UserControl.Resources>
-        <vm:CampaignsVM x:Key="CampaignsVM"/>
+        <vm:CampaignsVM x:Key="CampaignsVM" />
     </UserControl.Resources>
 
     <Grid DataContext="{StaticResource CampaignsVM}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" 
-                   Text="Use context menu to edit or delete chosen campaign"
-                   TextAlignment="Center"
-                   FontSize="19"/>
-        <DataGrid Grid.Row="1" 
-                  ItemsSource="{Binding Campaigns}" 
-                  AutoGenerateColumns="False" 
-                  IsReadOnly="False" 
+        <DataGrid Grid.Row="0"
+                  ItemsSource="{Binding Campaigns}"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="False"
                   SelectedItem="{Binding SelectedCampaign}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="Amount" Binding="{Binding BidAmount}"/>
-                <DataGridTextColumn Header="Min amount" Binding="{Binding MinAmount}"/>
-                <DataGridTextColumn Header="Fund" Binding="{Binding Fund}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Amount" Binding="{Binding BidAmount}" />
+                <DataGridTextColumn Header="Min amount" Binding="{Binding MinAmount}" />
+                <DataGridTextColumn Header="Fund" Binding="{Binding Fund}" />
                 <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
                 <DataGridTextColumn Header="Town" Binding="{Binding Town}" />
-                <DataGridTextColumn Header="Radius" Binding="{Binding Radius}"/>
+                <DataGridTextColumn Header="Radius" Binding="{Binding Radius}" />
             </DataGrid.Columns>
             <DataGrid.ContextMenu>
                 <ContextMenu DataContext="{StaticResource CampaignsVM}">
-                    <MenuItem Header="Edit campaign" Command="{Binding EditCampaignCommand}"></MenuItem>
                     <MenuItem Header="Delete campaign" Command="{Binding DeleteCampaignCommand}"></MenuItem>
                 </ContextMenu>
             </DataGrid.ContextMenu>
         </DataGrid>
-        <Button Grid.Row="2" Height="50" Command="{Binding SaveEditedCampaignsCommand}"></Button>
+        <TextBlock Grid.Row="1"
+                   Text="Edit data in columns and save with button, delete with context menu"
+                   TextAlignment="Center"
+                   FontSize="19" />
+        <Grid Grid.Row="2" Style="{DynamicResource MainMenuGridStyle}">
+            <StackPanel Style="{DynamicResource MainMenuStackPanelStyle}">
+                <Button Style="{DynamicResource NewCampaignButtonStyle}"
+                            Command="{Binding SaveEditedCampaignsCommand}">
+                    <TextBlock Text="Save edited campaigns" />
+                </Button>
+            </StackPanel>
+        </Grid>
     </Grid>
 </UserControl>

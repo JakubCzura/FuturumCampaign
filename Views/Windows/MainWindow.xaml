@@ -50,10 +50,7 @@
         </Grid>
 
         <Grid Grid.Row="2">
-            <ContentControl Content="{Binding MainWindowContent}">
-                <!--<uc:NewCampaignUC></uc:NewCampaignUC>-->
-                <!--<uc:CampaignsUC></uc:CampaignsUC>-->
-            </ContentControl>
+            <ContentControl Content="{Binding MainWindowContent}"/>
         </Grid>
     </Grid>
 </Window>

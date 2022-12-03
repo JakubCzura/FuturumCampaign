@@ -10,6 +10,9 @@ using System.Windows.Input;
 
 namespace FuturumCampaign.Commands
 {
+    /// <summary>
+    /// Deletes selected campaign
+    /// </summary>
     public class DeleteCampaignCommand : BaseCommand, ICommand
     {
         public DeleteCampaignCommand(CampaignsVM campaignsVM)

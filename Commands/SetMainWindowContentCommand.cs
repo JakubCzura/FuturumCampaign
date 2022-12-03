@@ -8,6 +8,9 @@ using System.Windows.Input;
 
 namespace FuturumCampaign.Commands
 {
+    /// <summary>
+    /// Sets content for MainWindow's ContentControl
+    /// </summary>
     public class SetMainWindowContentCommand : BaseCommand, ICommand
     {
         public SetMainWindowContentCommand(MainWindowVM mainWindowVM)
