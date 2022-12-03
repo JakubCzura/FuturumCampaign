@@ -17,12 +17,11 @@
         <uc:CampaignsUC x:Key="CampaignsUC" />
 
         <DataTemplate DataType="{x:Type vm:NewCampaignVM}">
-            <uc:NewCampaignUC/>
+            <uc:NewCampaignUC />
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:CampaignsVM}">
-            <uc:CampaignsUC/>
+            <uc:CampaignsUC />
         </DataTemplate>
-        
     </Window.Resources>
 
     <Grid DataContext="{StaticResource MainWindowVM}">
@@ -50,7 +49,7 @@
         </Grid>
 
         <Grid Grid.Row="2">
-            <ContentControl Content="{Binding MainWindowContent}"/>
+            <ContentControl Content="{Binding MainWindowContent}" />
         </Grid>
     </Grid>
 </Window>

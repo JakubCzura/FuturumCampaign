@@ -39,7 +39,7 @@ namespace FuturumCampaign.Commands
             if (Validator.Validate(Campaign))
             {
                 NewCampaignVM.Campaigns.Add(Campaign);
-                if(CampaignsData.SaveCampaigns(NewCampaignVM.Campaigns))
+                if (CampaignsData.SaveCampaigns(NewCampaignVM.Campaigns))
                 {
                     MessageBox.Show("New campaign saved");
                 }

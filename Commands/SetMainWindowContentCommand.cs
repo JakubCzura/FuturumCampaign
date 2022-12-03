@@ -1,9 +1,4 @@
 ﻿using FuturumCampaign.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace FuturumCampaign.Commands
@@ -27,7 +22,7 @@ namespace FuturumCampaign.Commands
 
         public void Execute(object? parameter)
         {
-            if(parameter != null)
+            if (parameter != null)
             {
                 if (parameter.ToString() == "NewCampaign")
                 {
@@ -37,7 +32,7 @@ namespace FuturumCampaign.Commands
                 {
                     MainWindowVM.MainWindowContent = new CampaignsVM();
                 }
-            }            
+            }
         }
     }
 }
