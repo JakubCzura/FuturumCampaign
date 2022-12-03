@@ -14,6 +14,7 @@
     <Window.Resources>
         <vm:MainWindowVM x:Key="MainWindowVM" />
         <uc:NewCampaignUC x:Key="NewCampaignUC" />
+        <uc:CampaignsUC x:Key="CampaignsUC" />
     </Window.Resources>
 
     <Grid>
@@ -31,10 +32,7 @@
                     <TextBlock Text="Create new campaign" />
                 </Button>
                 <Button Style="{DynamicResource EditCampaignButtonStyle}">
-                    <TextBlock Text="Edit campaign" />
-                </Button>
-                <Button Style="{DynamicResource DeleteCampaignButtonStyle}">
-                    <TextBlock Text="Delete campaign" />
+                    <TextBlock Text="Your campaigns" />
                 </Button>
             </StackPanel>
         </Grid>
@@ -64,7 +62,8 @@
             </ScrollViewer>
 
             <ContentControl Grid.Column="1">
-                <uc:NewCampaignUC></uc:NewCampaignUC>
+                <!--<uc:NewCampaignUC></uc:NewCampaignUC>-->
+                <uc:CampaignsUC></uc:CampaignsUC>
             </ContentControl>
         </Grid>
     </Grid>
