@@ -10,5 +10,7 @@
             On,
             Off
         }
+
+        public string StatusValue { get; set; } = default!;
     }
 }

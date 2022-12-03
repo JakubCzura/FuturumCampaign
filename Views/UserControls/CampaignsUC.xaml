@@ -27,11 +27,11 @@
                 <DataGridTextColumn Header="Amount" Binding="{Binding BidAmount}" />
                 <DataGridTextColumn Header="Min amount" Binding="{Binding MinAmount}" />
                 <DataGridTextColumn Header="Fund" Binding="{Binding Fund}" />
-                <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
-                <DataGridTextColumn Header="Town" Binding="{Binding Town}" />
-                <DataGridTextColumn Header="Radius" Binding="{Binding Radius}" />
-                <DataGridTextColumn Header="ProductName" Binding="{Binding Product.ProductName}" />
-                <DataGridTextColumn Header="Product description" Binding="{Binding Product.Description}" />
+                <DataGridTextColumn Header="Status" Binding="{Binding Status.StatusValue}" />
+                <DataGridTextColumn Header="Town" Binding="{Binding Town.TownName}" />
+                <DataGridTextColumn Header="Radius" Binding="{Binding Town.Radius}" />
+                <DataGridTextColumn Header="Product's name" Binding="{Binding Product.ProductName}" />
+                <DataGridTextColumn Header="Product's description" Binding="{Binding Product.Description}" />
             </DataGrid.Columns>
             <DataGrid.ContextMenu>
                 <ContextMenu DataContext="{StaticResource CampaignsVM}">

@@ -16,9 +16,9 @@ namespace FuturumCampaign.Models
             Fund = fund;
             Keywords = keywords;
             Name = name;
-            Radius = radius;
-            Status = status;
-            Town = town;
+            Town.Radius = radius;
+            Status.StatusValue = status;
+            Town.TownName = town;
             Product.ProductName = productName;
             Product.Description = description;
         }
@@ -29,8 +29,12 @@ namespace FuturumCampaign.Models
         public List<string> Keywords { get; set; } = default!;
         public decimal MinAmount { get; set; } = default!;
         public string Name { get; set; } = default!;
-        public double Radius { get; set; } = default!;
-        public string Status { get; set; } = default!;
-        public string Town { get; set; } = default!;
+        public Town Town { get; set; } = new();
+
+        public Status Status { get; set; } = new();
+        //public double Radius { get; set; } = default!;
+        
+        //public string Status { get; set; } = default!;
+        //public string Town { get; set; } = default!;
     }
 }

@@ -20,10 +20,10 @@ namespace FuturumCampaign.Validators
                 Guard.IsGreaterThanOrEqualTo(campaign.BidAmount, 0);
                 Guard.IsGreaterThanOrEqualTo(campaign.MinAmount, 0);
                 Guard.IsGreaterThanOrEqualTo(campaign.Fund, 0);
-                Guard.IsGreaterThanOrEqualTo(campaign.Radius, 0);
+                Guard.IsGreaterThanOrEqualTo(campaign.Town.Radius, 0);
                 Guard.IsNotNull(campaign.Keywords);
-                Guard.IsNotNullOrWhiteSpace(campaign.Status);
-                Guard.IsNotNullOrWhiteSpace(campaign.Town);
+                Guard.IsNotNullOrWhiteSpace(campaign.Status.StatusValue);
+                Guard.IsNotNullOrWhiteSpace(campaign.Town.TownName);
                 Guard.IsNotNullOrWhiteSpace(campaign.Product.ProductName);
                 Guard.IsNotNullOrWhiteSpace(campaign.Product.Description);
                 return true;
