@@ -4,6 +4,7 @@ using FuturumCampaign.DirectoriesHelper;
 using FuturumCampaign.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 
@@ -19,7 +20,8 @@ namespace FuturumCampaign.ViewModels
         private List<Campaign> campaigns = new();
         private decimal fund;
         private string keyword;
-        private List<string> keywords = new();
+        //private List<string> keywords = new();
+        private ObservableCollection<string> keywords = new();
         private decimal minAmount;
         private string name;
         private double radius;
@@ -27,6 +29,8 @@ namespace FuturumCampaign.ViewModels
         private List<string> statusList = new();
         private string town;
         private List<string> townsList = new();
+        private string productName;
+        private string description;
 
         public NewCampaignVM()
         {
@@ -71,7 +75,13 @@ namespace FuturumCampaign.ViewModels
             set { keyword = value; OnPropertyChanged(); }
         }
 
-        public List<string> Keywords
+        //public List<string> Keywords
+        //{
+        //    get { return keywords; }
+        //    set { keywords = value; OnPropertyChanged(); }
+        //}
+
+        public ObservableCollection<string> Keywords
         {
             get { return keywords; }
             set { keywords = value; OnPropertyChanged(); }
@@ -113,6 +123,18 @@ namespace FuturumCampaign.ViewModels
         {
             get { return town; }
             set { town = value; OnPropertyChanged(); }
+        }
+
+        public string ProductName
+        {
+            get { return productName; }
+            set { productName = value; OnPropertyChanged(); }
+        }
+
+        public string Description
+        {
+            get { return description; }
+            set { description = value; OnPropertyChanged(); }
         }
 
         public List<string> TownsList

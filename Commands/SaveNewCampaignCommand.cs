@@ -2,6 +2,7 @@
 using FuturumCampaign.Models;
 using FuturumCampaign.Validators;
 using FuturumCampaign.ViewModels;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
@@ -30,11 +31,13 @@ namespace FuturumCampaign.Commands
             Campaign Campaign = new(NewCampaignVM.BidAmount,
                                     NewCampaignVM.MinAmount,
                                     NewCampaignVM.Fund,
-                                    NewCampaignVM.Keywords,
+                                    NewCampaignVM.Keywords.ToList(),
                                     NewCampaignVM.Name,
                                     NewCampaignVM.Radius,
                                     NewCampaignVM.Status,
-                                    NewCampaignVM.Town);
+                                    NewCampaignVM.Town,
+                                    NewCampaignVM.ProductName,
+                                    NewCampaignVM.Description);
 
             if (Validator.Validate(Campaign))
             {

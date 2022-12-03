@@ -9,7 +9,7 @@ namespace FuturumCampaign.Models
             Keywords = new();
         }
 
-        public Campaign(decimal bidAmount, decimal minAmount, decimal fund, List<string> keywords, string name, double radius, string status, string town)
+        public Campaign(decimal bidAmount, decimal minAmount, decimal fund, List<string> keywords, string name, double radius, string status, string town, string productName, string description)
         {
             BidAmount = bidAmount;
             MinAmount = minAmount;
@@ -19,8 +19,11 @@ namespace FuturumCampaign.Models
             Radius = radius;
             Status = status;
             Town = town;
+            Product.ProductName = productName;
+            Product.Description = description;
         }
 
+        public Product Product { get; set; } = new();
         public decimal BidAmount { get; set; } = default!;
         public decimal Fund { get; set; } = default!;
         public List<string> Keywords { get; set; } = default!;

@@ -40,6 +40,16 @@
                             <controls:AutoCompleteBox FilterMode="Contains" ItemsSource="{Binding AllKeywords}" Text="{Binding Keyword, Mode=TwoWay}" />
                             <Button Command="{Binding AddKeywordCommand}">Add</Button>
                         </UniformGrid>
+                        <UniformGrid Rows="1">
+                            <TextBlock>Keywords:</TextBlock>
+                            <ListView ItemsSource="{Binding Keywords}">
+                                <ListView.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal"></StackPanel>
+                                    </ItemsPanelTemplate>
+                                </ListView.ItemsPanel>
+                            </ListView>
+                        </UniformGrid>
                     </StackPanel>
                     <StackPanel>
                         <TextBlock HorizontalAlignment="Center">Bid amount</TextBlock>
@@ -80,6 +90,20 @@
                         <UniformGrid Rows="1">
                             <TextBlock>Radius in kilometers:</TextBlock>
                             <TextBox Text="{Binding Radius}" />
+                        </UniformGrid>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock HorizontalAlignment="Center">Product</TextBlock>
+                        <UniformGrid Rows="1">
+                            <TextBlock>ProductName:</TextBlock>
+                            <TextBox Text="{Binding ProductName}" />
+                        </UniformGrid>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock HorizontalAlignment="Center">Product</TextBlock>
+                        <UniformGrid Rows="1">
+                            <TextBlock>Product description:</TextBlock>
+                            <TextBox Text="{Binding Description}" />
                         </UniformGrid>
                     </StackPanel>
                 </StackPanel>

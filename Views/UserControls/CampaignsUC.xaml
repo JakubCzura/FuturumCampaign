@@ -30,6 +30,8 @@
                 <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
                 <DataGridTextColumn Header="Town" Binding="{Binding Town}" />
                 <DataGridTextColumn Header="Radius" Binding="{Binding Radius}" />
+                <DataGridTextColumn Header="ProductName" Binding="{Binding Product.ProductName}" />
+                <DataGridTextColumn Header="Product description" Binding="{Binding Product.Description}" />
             </DataGrid.Columns>
             <DataGrid.ContextMenu>
                 <ContextMenu DataContext="{StaticResource CampaignsVM}">

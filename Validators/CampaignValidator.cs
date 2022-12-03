@@ -24,6 +24,8 @@ namespace FuturumCampaign.Validators
                 Guard.IsNotNull(campaign.Keywords);
                 Guard.IsNotNullOrWhiteSpace(campaign.Status);
                 Guard.IsNotNullOrWhiteSpace(campaign.Town);
+                Guard.IsNotNullOrWhiteSpace(campaign.Product.ProductName);
+                Guard.IsNotNullOrWhiteSpace(campaign.Product.Description);
                 return true;
             }
             catch (Exception exception)
