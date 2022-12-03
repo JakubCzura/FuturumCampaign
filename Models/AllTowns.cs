@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FuturumCampaign.Models
 {
-    public class Radius
+    public static class AllTowns
     {
-        public double Length { get; set; } 
+        public static List<string> Towns { get; set; } = new();
     }
 }

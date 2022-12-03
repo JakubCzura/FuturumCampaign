@@ -47,7 +47,7 @@
                         <TextBlock HorizontalAlignment="Center">Keywords</TextBlock>
                         <UniformGrid Rows="1">
                             <TextBlock>Keyword:</TextBlock>
-                            <controls:AutoCompleteBox FilterMode="Contains" ItemsSource="{Binding AllKeywords}" Text="{Binding Keyword}" />
+                            <controls:AutoCompleteBox FilterMode="Contains" ItemsSource="{Binding AllKeywords}" Text="{Binding Keyword, Mode=TwoWay}" />
                             <Button Command="{Binding AddKeywordCommand}">Add</Button>
                         </UniformGrid>
                     </StackPanel>
@@ -55,9 +55,9 @@
                         <TextBlock HorizontalAlignment="Center">Bid amount</TextBlock>
                         <UniformGrid Rows="2" Columns="2">
                             <TextBlock>Amount:</TextBlock>
-                            <TextBox Text="{Binding Amount}" />
+                            <TextBox Text="{Binding BidAmount, Mode=TwoWay}" />
                             <TextBlock>Min amount:</TextBlock>
-                            <TextBox Text="{Binding MinAmount}"></TextBox>
+                            <TextBox Text="{Binding MinAmount, Mode=TwoWay}"></TextBox>
                         </UniformGrid>
                     </StackPanel>
                     <StackPanel>
@@ -74,7 +74,7 @@
                         <TextBlock HorizontalAlignment="Center">Status</TextBlock>
                         <UniformGrid Rows="1">
                             <TextBlock>On/Off:</TextBlock>
-                            <ComboBox ItemsSource="{Binding StatusList}" SelectedItem="{Binding Status}"/>
+                            <ComboBox ItemsSource="{Binding StatusList}" SelectedItem="{Binding Status}" />
                         </UniformGrid>
                     </StackPanel>
 
@@ -82,14 +82,16 @@
                         <TextBlock HorizontalAlignment="Center">Town</TextBlock>
                         <UniformGrid Rows="1">
                             <TextBlock>Town:</TextBlock>
-                            <controls:AutoCompleteBox ItemsSource="{Binding TownsList}" Text="{Binding Town}"/>
+                            <controls:AutoCompleteBox ItemsSource="{Binding TownsList}" Text="{Binding Town, Mode=TwoWay}" />
+                            <!--<ComboBox ItemsSource="{Binding TownsList}" SelectedItem="{Binding Town, Mode=TwoWay}" />-->
+                            <!--<TextBox Text="{Binding Town}" />-->
                         </UniformGrid>
                     </StackPanel>
                     <StackPanel>
                         <TextBlock HorizontalAlignment="Center">Radius</TextBlock>
                         <UniformGrid Rows="1">
                             <TextBlock>Radius in kilometers:</TextBlock>
-                            <TextBox Text="{Binding Radius}"/>
+                            <TextBox Text="{Binding Radius}" />
                         </UniformGrid>
                     </StackPanel>
                 </StackPanel>

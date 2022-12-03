@@ -1,13 +1,8 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FuturumCampaign.Serializers
 {
-    public class JsonSerializer
+    public static class Json
     {
         public static T Deserialize<T>(string value)
         {
@@ -18,6 +13,5 @@ namespace FuturumCampaign.Serializers
         {
             return JsonConvert.SerializeObject(value);
         }
-
     }
 }

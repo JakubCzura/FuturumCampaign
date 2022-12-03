@@ -1,4 +1,6 @@
 ﻿using FuturumCampaign.Commands;
+using FuturumCampaign.DataHelper;
+using FuturumCampaign.DirectoriesHelper;
 using FuturumCampaign.Models;
 using System;
 using System.Collections.Generic;
@@ -12,8 +14,8 @@ namespace FuturumCampaign.ViewModels
     /// </summary>
     public class NewCampaignVM : BaseViewModel
     {
-        private decimal amount;
-        private Campaign campaign;
+        private decimal bidAmount;
+        
 
         private decimal fund;
 
@@ -28,30 +30,30 @@ namespace FuturumCampaign.ViewModels
         private string town;
         private double radius;
         private List<string> allKeywords = new();
+        private List<Campaign> campaigns = new();
 
         public ICommand AddKeywordCommand { get; set; }
         public ICommand SaveNewCampaignCommand { get; set; }
 
         public NewCampaignVM()
         {
-            Campaign = new Campaign();
+            Campaigns = CampaignsData.ReadCampaigns();
+            
             AllKeywords = KeywordsCreator.CreateKeywords();
             TownsList = TownsCreator.CreateTowns();
+            StatusList = GetStatusList();
             AddKeywordCommand = new AddKeywordCommand(this);
             SaveNewCampaignCommand = new SaveNewCampaignCommand(this);
+            ApplicationDirectories.CreateDataDirectory();
         }
 
-        public decimal Amount
+        public decimal BidAmount
         {
-            get { return amount; }
-            set { amount = value; OnPropertyChanged(); }
+            get { return bidAmount; }
+            set { bidAmount = value; OnPropertyChanged(); }
         }
 
-        public Campaign Campaign
-        {
-            get { return campaign; }
-            set { campaign = value; OnPropertyChanged(); }
-        }
+  
 
         public decimal Fund
         {
@@ -96,11 +98,13 @@ namespace FuturumCampaign.ViewModels
                        .Select(v => v.ToString())
                        .ToList();
         }
+
         public List<string> StatusList
         {
-            get { return GetStatusList(); }
+            get { return statusList; }
             set { statusList = value; OnPropertyChanged(); }
         }
+
         public List<string> TownsList
         {
             get { return townsList; }
@@ -112,9 +116,10 @@ namespace FuturumCampaign.ViewModels
             get { return town; }
             set { town = value; OnPropertyChanged(); }
         }
+
         public double Radius
         {
-            get { return radius; } 
+            get { return radius; }
             set { radius = value; OnPropertyChanged(); }
         }
 
@@ -122,6 +127,12 @@ namespace FuturumCampaign.ViewModels
         {
             get { return allKeywords; }
             set { allKeywords = value; OnPropertyChanged(); }
+        }
+
+        public List<Campaign> Campaigns
+        {
+            get { return campaigns; }
+            set { campaigns = value; OnPropertyChanged(); }
         }
     }
 }

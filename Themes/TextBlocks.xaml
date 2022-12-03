@@ -10,6 +10,6 @@
         <Setter Property="TextAlignment" Value="Center" />
         <Setter Property="FontSize" Value="30" />
         <Setter Property="FontFamily" Value="Georgia" />
-        <Setter Property="Padding" Value="10,10,10,10"/>
+        <Setter Property="Padding" Value="10,10,10,10" />
     </Style>
 </ResourceDictionary>

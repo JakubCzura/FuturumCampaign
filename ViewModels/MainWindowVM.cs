@@ -1,6 +1,5 @@
 ﻿using FuturumCampaign.Models;
 using System.Collections.Generic;
-using System.Windows.Documents;
 
 namespace FuturumCampaign.ViewModels
 {

@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace FuturumCampaign.Models
 {
-    public class BidAmount
+    public static class AllKeywords
     {
-        public decimal Amount { get; set; }
-
-        public decimal MinAmount { get; set; }
+        public static List<string> Keywords { get; set; } = new();
     }
 }
