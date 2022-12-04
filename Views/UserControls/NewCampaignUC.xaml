@@ -101,7 +101,7 @@
                     <TextBlock HorizontalAlignment="Center"
                                Text="Status" />
                     <UniformGrid Rows="1">
-                        <TextBlock Text="On/Off" />
+                        <TextBlock Text="On/Off:" />
                         <ComboBox ItemsSource="{Binding StatusList}"
                                   SelectedItem="{Binding Status}" />
                     </UniformGrid>
@@ -120,7 +120,7 @@
                     <TextBlock HorizontalAlignment="Center"
                                Text="Radius" />
                     <UniformGrid Rows="1">
-                        <TextBlock Text="Radius in kilometers" />
+                        <TextBlock Text="Radius in kilometers:" />
                         <TextBox Text="{Binding Radius}" />
                     </UniformGrid>
                 </StackPanel>
@@ -128,7 +128,7 @@
                     <TextBlock HorizontalAlignment="Center"
                                Text="Product" />
                     <UniformGrid Rows="1">
-                        <TextBlock Text="Product's name" />
+                        <TextBlock Text="Product's name:" />
                         <TextBox Text="{Binding ProductName}" />
                     </UniformGrid>
                 </StackPanel>
@@ -136,7 +136,7 @@
                     <TextBlock HorizontalAlignment="Center"
                                Text="Product" />
                     <UniformGrid Rows="1">
-                        <TextBlock Text="Product's description" />
+                        <TextBlock Text="Product's description:" />
                         <TextBox Text="{Binding Description}" />
                     </UniformGrid>
                 </StackPanel>
