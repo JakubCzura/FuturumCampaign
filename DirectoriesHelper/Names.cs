@@ -10,6 +10,16 @@
         /// <summary>
         /// Name of file with campaigns' data
         /// </summary>
-        public static string CampaignsJson = "Campaigns.json";
+        public static string CampaignsJson { get; } = "Campaigns.json";
+
+        /// <summary>
+        /// Name of file with towns' data
+        /// </summary>
+        public static string TownsJson { get; } = "Towns.json";
+
+        /// <summary>
+        /// Name of file with keywords' data
+        /// </summary>
+        public static string KeywordsJson { get; } = "Keywords.json";
     }
 }

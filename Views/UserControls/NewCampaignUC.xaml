@@ -47,87 +47,96 @@
 
                 <StackPanel>
                     <TextBlock HorizontalAlignment="Center"
-                               Text="Keywords"/>
+                               Text="Keywords" />
                     <UniformGrid Rows="1">
-                        <TextBlock Text="Keyword:"/>
-                        <controls:AutoCompleteBox FilterMode="Contains" 
-                                                  ItemsSource="{Binding AllKeywords}" 
-                                                  Text="{Binding Keyword}" />
-                        <Button Command="{Binding AddKeywordCommand}" 
-                                Content="Add"/>
+                        <TextBlock Text="Keyword:" />
+                        <controls:AutoCompleteBox FilterMode="Contains"
+                                                  ItemsSource="{Binding AllKeywords}"
+                                                  Text="{Binding Keyword, Mode=TwoWay}" />
+                        <Button Command="{Binding AddKeywordCommand}"
+                                Content="Add" />
                     </UniformGrid>
                     <UniformGrid Rows="1">
-                        <TextBlock Text="Keywords:"/>
-                        <ListView ItemsSource="{Binding Keywords}">
+                        <TextBlock Text="Keywords:" />
+                        <!--ListView for keywords that user inputs-->
+                        <ListView ItemsSource="{Binding Keywords}"
+                                  SelectedItem="{Binding SelectedKeyword}">
                             <ListView.ItemsPanel>
                                 <ItemsPanelTemplate>
-                                    <StackPanel Orientation="Horizontal"/>
+                                    <StackPanel Orientation="Horizontal" />
                                 </ItemsPanelTemplate>
                             </ListView.ItemsPanel>
+                            <!--Context menu to delete keyword from list-->
+                            <ListView.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Delete keyword"
+                                        Command="{Binding DeleteKeywordCommand}" />
+                                </ContextMenu>
+                            </ListView.ContextMenu>
                         </ListView>
                     </UniformGrid>
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock HorizontalAlignment="Center" Text="Bid amount"/> 
+                    <TextBlock HorizontalAlignment="Center" Text="Bid amount" />
                     <UniformGrid Rows="2" Columns="2">
-                        <TextBlock Text="Amount:"/> 
+                        <TextBlock Text="Amount:" />
                         <TextBox Text="{Binding BidAmount}" />
-                        <TextBlock Text="Min amount:"/>
+                        <TextBlock Text="Min amount:" />
                         <TextBox Text="{Binding MinAmount}"></TextBox>
                     </UniformGrid>
                 </StackPanel>
                 <StackPanel>
                     <TextBlock HorizontalAlignment="Center"
-                               Text="Campaign fund:"/>
+                               Text="Campaign fund:" />
                     <UniformGrid Rows="1">
-                        <TextBlock Text="Fund:"/>
+                        <TextBlock Text="Fund:" />
                         <TextBox Text="{Binding Fund}" />
                     </UniformGrid>
                 </StackPanel>
             </StackPanel>
 
-            <StackPanel Grid.Column="1" 
+            <StackPanel Grid.Column="1"
                         Margin="5,5,5,5">
                 <StackPanel>
                     <TextBlock HorizontalAlignment="Center"
-                               Text="Status"/>
+                               Text="Status" />
                     <UniformGrid Rows="1">
-                        <TextBlock Text="On/Off"/>
-                        <ComboBox ItemsSource="{Binding StatusList}" 
+                        <TextBlock Text="On/Off" />
+                        <ComboBox ItemsSource="{Binding StatusList}"
                                   SelectedItem="{Binding Status}" />
                     </UniformGrid>
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock HorizontalAlignment="Center" Text="Town"/>
+                    <TextBlock HorizontalAlignment="Center" Text="Town" />
                     <UniformGrid Rows="1">
-                        <TextBlock Text="Town:"/>
+                        <TextBlock Text="Town:" />
                         <controls:AutoCompleteBox FilterMode="Contains"
-                                                  ItemsSource="{Binding TownsList}" 
-                                                  Text="{Binding Town}" />
+                                                  ItemsSource="{Binding TownsNamesList}"
+                                                  Text="{Binding Town, Mode=TwoWay}" />
                     </UniformGrid>
                 </StackPanel>
                 <StackPanel>
                     <TextBlock HorizontalAlignment="Center"
-                               Text="Radius"/> 
+                               Text="Radius" />
                     <UniformGrid Rows="1">
-                        <TextBlock Text="Radius in kilometers"/>
+                        <TextBlock Text="Radius in kilometers" />
                         <TextBox Text="{Binding Radius}" />
                     </UniformGrid>
                 </StackPanel>
                 <StackPanel>
                     <TextBlock HorizontalAlignment="Center"
-                               Text="Product"/>
+                               Text="Product" />
                     <UniformGrid Rows="1">
-                        <TextBlock Text="Product's name"/>
+                        <TextBlock Text="Product's name" />
                         <TextBox Text="{Binding ProductName}" />
                     </UniformGrid>
                 </StackPanel>
                 <StackPanel>
                     <TextBlock HorizontalAlignment="Center"
-                               Text="Product"/>
+                               Text="Product" />
                     <UniformGrid Rows="1">
-                        <TextBlock Text="Product's description"/>
+                        <TextBlock Text="Product's description" />
                         <TextBox Text="{Binding Description}" />
                     </UniformGrid>
                 </StackPanel>

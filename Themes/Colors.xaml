@@ -14,11 +14,6 @@
         <GradientStop Color="#FFF6F2F2" Offset="1" />
     </LinearGradientBrush>
 
-    <LinearGradientBrush x:Key="DeleteCampaignButtonColorDefault" EndPoint="0.5,1" StartPoint="0.5,0">
-        <GradientStop Color="#E85231" />
-        <GradientStop Color="#FFF6F2F2" Offset="1" />
-    </LinearGradientBrush>
-
     <LinearGradientBrush x:Key="LinearBlueBackgroundDefault" EndPoint="0.5,1" StartPoint="0.5,0">
         <GradientStop Color="#66d9ff" />
         <GradientStop Color="White" Offset="1" />

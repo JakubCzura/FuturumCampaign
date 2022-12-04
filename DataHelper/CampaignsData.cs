@@ -43,19 +43,18 @@ namespace FuturumCampaign.DataHelper
                 if (File.Exists(fullPath))
                 {
                     string json = File.ReadAllText(fullPath);
-                    if(json.Length > 1)
+                    if (json.Length > 1)
                     {
                         return Json.Deserialize<List<Campaign>>(json);
                     }
                     else
                     {
                         return new List<Campaign>();
-                    }                    
+                    }
                 }
                 else
                 {
                     File.Create(fullPath);
-                    //MessageBox.Show("Error while reading campaigns' data");
                     return new List<Campaign>();
                 }
             }

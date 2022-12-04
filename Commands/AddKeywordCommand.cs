@@ -25,7 +25,10 @@ namespace FuturumCampaign.Commands
         {
             if (NewCampaignVM.Keywords != null && String.IsNullOrWhiteSpace(NewCampaignVM.Keyword) == false)
             {
-                NewCampaignVM.Keywords.Add(NewCampaignVM.Keyword);
+                if (NewCampaignVM.Keywords.Contains(NewCampaignVM.Keyword) == false)
+                {
+                    NewCampaignVM.Keywords.Add(NewCampaignVM.Keyword);
+                }
             }
         }
     }

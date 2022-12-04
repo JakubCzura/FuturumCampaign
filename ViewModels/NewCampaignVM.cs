@@ -15,31 +15,34 @@ namespace FuturumCampaign.ViewModels
     /// </summary>
     public class NewCampaignVM : BaseViewModel
     {
-        private List<string> allKeywords = new();
         private decimal bidAmount;
-        private List<Campaign> campaigns = new();
+        private string description;
         private decimal fund;
         private string keyword;
-        //private List<string> keywords = new();
-        private ObservableCollection<string> keywords = new();
         private decimal minAmount;
         private string name;
-        private double radius;
-        private string status;
-        private List<string> statusList = new();
-        private string town;
-        private List<string> townsList = new();
         private string productName;
-        private string description;
+        private double radius;
+        private string selectedKeyword;
+        private string status;
+        private string town;
+        private List<Campaign> campaigns = new();
+        private List<string> townsNamesList = new();
+        private List<string> statusList = new();
+        private List<string> allKeywords = new();
+        private ObservableCollection<string> keywords = new();
+        public ICommand DeleteKeywordCommand { get; set; }
+        public ICommand SaveNewCampaignCommand { get; set; }
 
         public NewCampaignVM()
         {
             Campaigns = CampaignsData.ReadCampaigns();
-            AllKeywords = KeywordsCreator.CreateKeywords();
-            TownsList = TownsCreator.CreateTowns();
+            AllKeywords = KeywordsNamesData.ReadKeywordsNames();
+            TownsNamesList = TownsNamesData.ReadTownsNames();
             StatusList = GetStatusList();
             AddKeywordCommand = new AddKeywordCommand(this);
             SaveNewCampaignCommand = new SaveNewCampaignCommand(this);
+            DeleteKeywordCommand = new DeleteKeywordCommand(this);
             ApplicationDirectories.CreateDataDirectory();
         }
 
@@ -63,6 +66,12 @@ namespace FuturumCampaign.ViewModels
             set { campaigns = value; OnPropertyChanged(); }
         }
 
+        public string Description
+        {
+            get { return description; }
+            set { description = value; OnPropertyChanged(); }
+        }
+
         public decimal Fund
         {
             get { return fund; }
@@ -74,12 +83,6 @@ namespace FuturumCampaign.ViewModels
             get { return keyword; }
             set { keyword = value; OnPropertyChanged(); }
         }
-
-        //public List<string> Keywords
-        //{
-        //    get { return keywords; }
-        //    set { keywords = value; OnPropertyChanged(); }
-        //}
 
         public ObservableCollection<string> Keywords
         {
@@ -99,13 +102,23 @@ namespace FuturumCampaign.ViewModels
             set { name = value; OnPropertyChanged(); }
         }
 
+        public string ProductName
+        {
+            get { return productName; }
+            set { productName = value; OnPropertyChanged(); }
+        }
+
         public double Radius
         {
             get { return radius; }
             set { radius = value; OnPropertyChanged(); }
         }
 
-        public ICommand SaveNewCampaignCommand { get; set; }
+        public string SelectedKeyword
+        {
+            get { return selectedKeyword; }
+            set { selectedKeyword = value; OnPropertyChanged(); }
+        }
 
         public string Status
         {
@@ -125,22 +138,10 @@ namespace FuturumCampaign.ViewModels
             set { town = value; OnPropertyChanged(); }
         }
 
-        public string ProductName
+        public List<string> TownsNamesList
         {
-            get { return productName; }
-            set { productName = value; OnPropertyChanged(); }
-        }
-
-        public string Description
-        {
-            get { return description; }
-            set { description = value; OnPropertyChanged(); }
-        }
-
-        public List<string> TownsList
-        {
-            get { return townsList; }
-            set { townsList = value; OnPropertyChanged(); }
+            get { return townsNamesList; }
+            set { townsNamesList = value; OnPropertyChanged(); }
         }
 
         public static List<string> GetStatusList()

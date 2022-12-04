@@ -4,7 +4,8 @@ namespace FuturumCampaign.Models
 {
     public class Campaign
     {
-        public Campaign() { }
+        public Campaign()
+        { }
 
         public Campaign(decimal bidAmount, decimal minAmount, decimal fund, List<string> keywords, string name, double radius, string status, string town, string productName, string description)
         {
