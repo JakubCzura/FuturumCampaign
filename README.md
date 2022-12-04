@@ -7,5 +7,5 @@ https://icon-icons.com/icon/Basket-cart-e-commerce-shop-shopping-commerce-buy/12
 
 NuGet:
 DotNetProjects.WpfToolkit.Input - https://www.nuget.org/packages/DotNetProjects.WpfToolkit.Input/6.1.94    
-CommunityToolkit.Diagnostics - https://github.com/CommunityToolkit/dotnet
+CommunityToolkit.Diagnostics - https://github.com/CommunityToolkit/dotnet                                    
 Newtonsoft.Json - https://www.newtonsoft.com/json
