@@ -1,6 +1,6 @@
 # FuturumCampaign
 
-An application to manage campaign of products to sell.
+An application to manage campaigns of products to sell.
 
 Additional stuff:                                                                                            
 Icon - https://icon-icons.com/icon/Basket-cart-e-commerce-shop-shopping-commerce-buy/120547
